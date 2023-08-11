@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+       <div class="box">
+        <% newlistitem.forEach(function(item){ %>
+            <p><li>Title::::<%= item.title %></li><li>Content::::<%= item.content %></li><form method="post" action="/delete">
+            <input type="checkbox" value="<%= item._id %>" name="checkbox" onChange="this.form.submit()">
+            <p>Click on the Checkbox to delete it</p>
+            <p><%= item._id %><h3>Copy this id if you want to update the text</h3></p>
+            <!-- <button type="submit" >DELETE</button> -->
+        </form>
+        <form action="/update" method="get">
+            <button type="submit">Update</button>
+        </form>
+        <form action="/" method="get">
+            <button type="submit">Get Back to the Homepage</button>
+        </form>
+        </p>
+        <% }) %>
+       </div>
+</body>
+</html>
